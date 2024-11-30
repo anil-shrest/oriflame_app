@@ -4,6 +4,7 @@ import 'package:givestarreviews/givestarreviews.dart';
 import 'package:html/parser.dart';
 import 'package:oriflame_app/model/product_details_model.dart';
 import 'package:oriflame_app/repository/notifier.dart';
+import 'package:oriflame_app/utils/notiication_service.dart';
 
 ///Product detail page
 class ProductDetailPage extends ConsumerWidget {
@@ -240,7 +241,14 @@ class SendSellerMessageWidget extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        NotificationService().showNotification(
+                          title: 'Oriflame',
+                          body:
+                              'Thank you for contacting us. We will get back to you soon.',
+                        );
+                        Navigator.pop(context);
+                      },
                       child: const Text(
                         'Send Messsage',
                         style: TextStyle(
@@ -258,7 +266,7 @@ class SendSellerMessageWidget extends StatelessWidget {
     }
 
     return FloatingActionButton(
-      backgroundColor: Colors.green,
+      backgroundColor: const Color.fromARGB(255, 113, 190, 114),
       onPressed: () => bottomSheet(),
       tooltip: 'Send Message',
       child: const Icon(

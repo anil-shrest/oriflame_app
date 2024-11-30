@@ -38,6 +38,7 @@ dependencies:
   flutter_riverpod:
   html: ^0.15.5
   givestarreviews: ^1.0.2
+  flutter_local_notifications:
 
 dev_dependencies:
   flutter_test:

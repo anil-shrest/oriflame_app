@@ -62,7 +62,6 @@ class DataNotifier extends ChangeNotifier {
       final newResponse = ProductDetailsModel.fromJson(detailsResponse);
       productDetails = AsyncValue.data(newResponse);
       colorVariants = newResponse.data?.colorVariants?.first;
-      print(colorVariants);
     } catch (e) {
       productDetails = AsyncValue.error(e.toString(), StackTrace.current);
     }

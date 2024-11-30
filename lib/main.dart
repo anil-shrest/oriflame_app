@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:oriflame_app/utils/notiication_service.dart';
 import 'package:oriflame_app/view/product_details.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  NotificationService().init();
+
   runApp(
     const ProviderScope(
       child: MyApp(),
